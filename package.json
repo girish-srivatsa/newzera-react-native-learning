@@ -1,0 +1,105 @@
+{
+  "name": "LearningProject",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "flow": "flow",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "clear": "jest --clear-cache",
+    "lint": "eslint .",
+    "update": "jest -u"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.6",
+    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+    "graphql": "^15.4.0",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-fetch-blob": "^0.10.8",
+    "react-native-gesture-handler": "^1.9.0",
+    "react-native-image-picker": "2.3.1",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-safe-area-context": "^3.1.9",
+    "react-native-screens": "^2.15.0",
+    "react-native-svg": "^12.1.0",
+    "react-svg-polygon": "^2.0.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-flow": "^7.12.1",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.2",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
+    "eslint": "^6.5.1",
+    "flow-bin": "^0.139.0",
+    "jest": "^25.5.4",
+    "jsdom": "16.4.0",
+    "jsdom-global": "3.0.2",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "mockdate": "^3.0.2",
+    "react-dom": "^16.14.0",
+    "react-native-vector-icons": "^7.1.0",
+    "react-test-renderer": "16.13.1",
+    "standard": "^16.0.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testMatch": [
+      "<rootDir>/Tests/**/*.js",
+      "**/?(*.)(spec|test).js?(x)"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/Tests/Setup.js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.svg": "<rootDir>/__mocks__/svgMock.js",
+      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
+    "setupFiles": [
+      "<rootDir>/Tests/Setup.js",
+      "<rootDir>/node_modules/react-native-gesture-handler/jestSetup.js"
+    ],
+    "testEnvironment": "jsdom",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "describe",
+      "test",
+      "jest",
+      "expect",
+      "fetch",
+      "navigator",
+      "__DEV__",
+      "XMLHttpRequest",
+      "FormData",
+      "React$Element"
+    ]
+  }
+}
